@@ -15,14 +15,14 @@ local os    = { getenv = os.getenv, setlocale = os.setlocale }
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/multicolor/cat_wallpaper.jpg"
-theme.font                                      = "Noto sans"
-theme.menu_bg_normal                            = "#000000"
-theme.menu_bg_focus                             = "#000000"
-theme.bg_normal                                 = "#0000ff"
-theme.bg_focus                                  = "#00ffff"
-theme.bg_urgent                                 = "#000000"
-theme.fg_normal                                 = "#000000"
-theme.fg_focus                                  = "#000000"
+theme.font                                      = "Noto sans 7"
+theme.menu_bg_normal                            = "#111111"
+theme.menu_bg_focus                             = "#111111"
+theme.bg_normal                                 = "#3498db"
+theme.bg_focus                                  = "#efc32d"
+theme.bg_urgent                                 = "#111111"
+theme.fg_normal                                 = "#111111"
+theme.fg_focus                                  = "#111111"
 theme.fg_urgent                                 = "#af1d18"
 theme.fg_minimize                               = "#ffffff"
 theme.border_width                              = 1
@@ -104,7 +104,7 @@ theme.cal = lain.widget.calendar({
     notification_preset = {
         font = "Noto sans",
         fg   = "#FFFFFF",
-        bg   = "#000000"
+        bg   = "#111111"
     }
 })
 
@@ -112,7 +112,7 @@ theme.cal = lain.widget.calendar({
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
     city_id = 2643743, -- placeholder (London)
-    notification_preset = { font = "Noto sans", fg ="#ffffff", bg = "#000000" },
+    notification_preset = { font = "Noto sans", fg ="#ffffff", bg = "#111111" },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
@@ -125,7 +125,7 @@ theme.weather = lain.widget.weather({
 local fsicon = wibox.widget.imagebox(theme.widget_fs)
 theme.fs = lain.widget.fs({
     options = "--exclude-type=tmpfs",
-    notification_preset = { font = "Noto sans", fg ="#ffffff", bg="#000000" },
+    notification_preset = { font = "Noto sans", fg ="#ffffff", bg="#111111" },
     settings  = function()
         widget:set_markup(markup.fontfg(theme.font, "#80d9d8", fs_now.used .. "% "))
     end
@@ -280,7 +280,7 @@ function theme.at_screen_connect(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 20, bg = "#000000", fg = "#ffffff"})
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 20, bg = "#111111", fg = "#ffffff"})
 
     -- Add widgets to the wibox
     s.mywibox:setup {
