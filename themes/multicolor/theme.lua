@@ -15,7 +15,7 @@ local os    = { getenv = os.getenv, setlocale = os.setlocale }
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/multicolor/cat_wallpaper.jpg"
-theme.font                                      = "Noto sans 7"
+theme.font                                      = "Noto sans CJK JP 7"
 theme.menu_bg_normal                            = "#111111"
 theme.menu_bg_focus                             = "#111111"
 theme.bg_normal                                 = "#3498db"
@@ -102,7 +102,7 @@ mytextclock.font = theme.font
 theme.cal = lain.widget.calendar({
     attach_to = { mytextclock },
     notification_preset = {
-        font = "Noto sans",
+        font = "Noto sans CJK JP",
         fg   = "#FFFFFF",
         bg   = "#111111"
     }
@@ -112,7 +112,7 @@ theme.cal = lain.widget.calendar({
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
     city_id = 2643743, -- placeholder (London)
-    notification_preset = { font = "Noto sans", fg ="#ffffff", bg = "#111111" },
+    notification_preset = { font = "Noto sans CJK JP", fg ="#ffffff", bg = "#111111" },
     weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
@@ -125,7 +125,7 @@ theme.weather = lain.widget.weather({
 local fsicon = wibox.widget.imagebox(theme.widget_fs)
 theme.fs = lain.widget.fs({
     options = "--exclude-type=tmpfs",
-    notification_preset = { font = "Noto sans", fg ="#ffffff", bg="#111111" },
+    notification_preset = { font = "Noto sans CJK JP", fg ="#ffffff", bg="#111111" },
     settings  = function()
         widget:set_markup(markup.fontfg(theme.font, "#80d9d8", fs_now.used .. "% "))
     end
